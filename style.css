@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #1f2937;
+    --light-text: #6b7280;
+    --background: #f9fafb;
+    --card-background: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.8;
+    background-color: var(--background);
+    color: var(--text-color);
+
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+    /* background-image: url(smoke2.mp4); */
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    padding: 4rem 0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15),
+                0 4px 10px -6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+
+}
+
+.profile-img {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
+    border: 4px solid rgb(219, 151, 151);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* transition: var(--transition); */
+    background-size: cover;
+    opacity: 10%;
+
+    animation: myphoto 10s  normal forwards  ease-in-out;
+}
+@keyframes myphoto{
+    30%{
+        opacity: 20%;
+        
+    }60%{
+        opacity: 40%;
+    }
+    80%{
+        opacity: 60%;
+    }
+    100%{
+        opacity: 80%;
+    }
+
+}
+
+
+.profile-video {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* border-radius: 50%; */
+    /* margin: 20px auto; */
+    display: block;
+    /* border: 4px solid white; */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    object-fit: cover;
+    background-color: var(--card-background);
+}
+    
+.profile-img:hover {
+    transform: scale(1.05);
+}
+.porfi
+nav {
+    background-color: var(--card-background);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+section {
+    background-color: var(--card-background);
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    margin-top: 4rem;
+}
+    
+    .wraper{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+    }
+    .wraper .icon{
+        position: relative;
+        background-color: #e7c8c8;
+        border-radius: 50%;
+        padding: 15px;
+        margin: 10px;
+        width: 80px;
+        height: 50px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* box-shadow: 0 10px 10px rgb(0, 0, 0,0.1); */
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.68,-0.55,0.265,1.55);
+    }
+  .wraper .tooltip{
+    position: absolute;
+    top: 0;
+    font-size: 23px;
+    background: #2e0f0f;
+    color: #c42323;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgb(0, 0, 0,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+
+  }
+
+  .wraper .tooltip::before{
+    position: absolute;
+    content:"";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    /* transition: all 0.3s cubic-bezier(0.68,-0.55,0.265,1.55); */
+
+  }
+
+  .wraper .icon:hover .tooltip{
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+  }
+
+  .wraper .icon:hover span , 
+  .wraper .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgb(0, 0, 0,0.1);
+    
+  }
+  .tooltip .icon .x {
+   --color: #dd0505;
+
+  }
+ .link:hover{
+    background-color: #07e8f8;
+  }
+  .x:hover{
+    background-color: black;
+    color: #1025e0;
+  }
+  .git{
+    text-decoration: none;
+  }
+  .git:hover{
+    background-color: yellow;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
