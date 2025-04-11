@@ -280,9 +280,29 @@ footer {
     background-color: yellow;
   }
   .msg{
+    position: relative;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    /* max-width: 100px; */
+    align-self: center;
+    border: 2px solid black;
+    justify-self: center;
+    background-color: #07e8f8;
+    flex-grow: 0;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+  .msg > input{
+    background-color: black;
+    /* line-height: 2rem; */
+    /* font-size: 2rem; */
+    color: blue;
+  }
+  .msg > textarea{
+    background-color: black;
+    color: blue;
+    /* font-size: 2rem; */
   }
   .sub{
     position: relative;
@@ -291,7 +311,7 @@ footer {
     max-width: 3rem;
     height: 2rem;
     align-items: center;
-    left: 50%;
+    left: 40%;
     background-color: black;
     color: blue;
     border-radius: 50%;
