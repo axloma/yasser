@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGINx</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="stylelogin.css">
+
+</head>
+<body class="loginb">
+<ul id="el">
+ 
+</ul>
+  <form action="">
+    <div class="login">
+      <img src="me.jpg" alt="" class="src"/>
+      <input type="text" class="username"/>
+      <input type="password" class="pass"/>
+      <button class="sub" id="sub" >login</button>
+    </div>        
+  </form>
+<button id="newx">new</button>
+    
+</body>
+
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+
+<script >
+  const url = "https://related-bright-cowbird.ngrok-free.app"
+  let array = []
+ const fetchitem = async()=> { 
+      el.textContent = ""
+      const {data : msg} =  await axios.get(`${url}/login`,{
+            method: "get",
+            headers: {
+              "ngrok-skip-browser-warning": "69420",
+             
+            },
+          });
+          array = msg;
+          msg.map((el,index)=>{
+            let li = document.createElement('li')
+            let ul = document.getElementById('el')
+            let del = document.createElement('button')
+            li.textContent = el.email;
+            li.id = el._id
+            del.textContent = "DELETE"
+            del.dataset.id = el._id;
+            del.className = "DELB"
+            // del.addEventListener('click',async()=>{
+            //   console.log("CLICKED")
+            //   console.log(li.id)
+               
+            // })
+            li.append(del)
+            ul.append(li)
+            // el.email
+            console.log(el.email)
+            //  document.getElementById("el").textContent += el.email 
+          })
+      console.log(msg)
+
+
+  }
+
+  sub.addEventListener('click', async (e)=>{
+
+      e.preventDefault()
+
+      console.log("hhie")
+      fetchitem()
+ })
+
+  el.addEventListener('click',async(e)=>{
+    e.preventDefault()
+    console.log(e.target.dataset.id)
+
+    if(e.target.className == "DELB"){
+    const id = e.target.dataset.id;
+    console.log(id,"ID")
+    const deletedel = await axios.delete(`${url}/login/${id}`);
+
+    console.log(deletedel.data)
+    setTimeout(() => {
+      
+      fetchitem()
+    }, 2000);
+
+    
+  } })
+  let timoutid ;
+  let intervalid;
+
+  const item = async()=> {
+      console.log(array.length,array)
+      const {data : allmsg} =  await axios.get(`${url}/login`,{
+            method: "get",
+            headers: {
+              "ngrok-skip-browser-warning": "69420",
+             
+            },
+          });
+          console.log(allmsg.length,allmsg)
+          if (allmsg.length > array.length){
+
+           fetchitem()
+          
+        }else{
+        console.log("SAME LENGTH")
+        }
+        // clearTimeout(timoutid)
+        // clearInterval(intervalid)
+
+      }
+
+  function  newmsg()  {
+    
+  //  timoutid = setTimeout(item, 10000);
+
+    
+  }
+  
+   intervalid = setInterval(item, 10000);
+
+  // clearInterval(intervalid)
+</script>
+
+  <!-- // import axios from 'axios'; -->

@@ -1,0 +1,31 @@
+{
+  "homepages": "https://axloma/github.io/yasser",
+  "name": "portofolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy" : "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axloma/yasser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axloma/yasser/issues"
+  },
+  "homepage": "https://github.com/axloma/yasser#readme",
+  "dependencies": {
+    "-": "^0.0.1",
+    "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "gh-pages": "^6.3.0",
+    "mongoose": "^8.13.2"
+  }
+}

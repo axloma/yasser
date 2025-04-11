@@ -84,6 +84,7 @@
 
             </div>
         </section>
+      <section id="contact">
 
         <h2> Contact Me </h2>
           <ul class="wraper">
@@ -103,7 +104,15 @@
 
            </ul>
     </div>
-
+    <form action="#Contact">
+        <div class="msg">
+              <p class="info" id="info">SEND MSG </p>
+              <input type="text" class="email" placeholder="EMAIL" id="email" required>
+              <textarea name="" cols="30" rows="10" placeholder="MESSAGE" class="msga" id="msg"  required></textarea>
+              <button class="sub" id="send">send</button>
+            </div>
+    </form>
+  </section>
     <footer>
         <div class="container">
             <p>&copy; 2023 yasser. All rights reserved to ai.</p>
@@ -111,3 +120,7 @@
     </footer>
 </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+
+<script src="mail.js"></script>
+
