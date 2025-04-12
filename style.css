@@ -5,7 +5,7 @@
     --secondary-color: #1e40af;
     --text-color: #1f2937;
     --light-text: #6b7280;
-    --background: #f9fafb;
+    --background: #233d3f;
     --card-background: #ffffff;
     --transition: all 0.3s ease;
 }
@@ -16,7 +16,18 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+section{
+    min-height: 100vh;
+}
+#skills{
+    /* display: inline-flex; */
+    /* background-color: #07e8f8; */
+    background-image: url('./s.jpg');
+    background-size:cover;
+    /* object-fit:contain; */
+    background-repeat: no-repeat;
+    background-position:  center;
+}
 body {
     line-height: 1.8;
     background-color: var(--background);
@@ -106,6 +117,23 @@ header {
 .profile-img:hover {
     transform: scale(1.05);
 }
+#about{
+    background-image:url('./aboutme.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#about > p {
+/* background-color: black; */
+font-size: 1.4rem;
+color:rgb(0, 0, 0);
+box-shadow: 0 .5rem 1rem black;
+font-weight: bold;
+
+}
+#projects{
+    background-image: url('./proj.jpg');
+
+}
 .porfi
 nav {
     background-color: var(--card-background);
@@ -124,7 +152,10 @@ nav ul {
 }
 
 nav a {
-    color: var(--text-color);
+    /* color: var(--text-color); */
+    
+    color: #f2f2f2;
+    background-color: blue;
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
@@ -170,18 +201,21 @@ section:hover {
 }
 
 .skills {
-    display: flex;
+     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1rem; 
 }
 
 .skill-tag {
-    background-color: rgba(37, 99, 235, 0.1);
-    color: var(--primary-color);
+    /* background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary-color); */
+    background-color: rgb(246 248 250);
+    color: #f9005b;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    font-weight: 500;
+    font-weight: 900;
     transition: var(--transition);
+    font-size: 2rem;
 }
 
 .skill-tag:hover {
@@ -284,34 +318,47 @@ footer {
     display: flex;
     flex-direction: column;
     /* flex-wrap: wrap; */
-    /* max-width: 100px; */
+    min-width: 50%;
     align-self: center;
     border: 2px solid black;
-    justify-self: center;
-    background-color: #07e8f8;
-    flex-grow: 0;
+    /* justify-self: center; */
+    background-color: #0b07f8;
+    /* flex-grow: 0; */
     /* justify-content: center; */
     /* align-items: center; */
+   
   }
   .msg > input{
     background-color: black;
     /* line-height: 2rem; */
-    /* font-size: 2rem; */
+    font-size: 3rem;
+    font-weight: bolder;
+    height: 10vh;
     color: blue;
   }
   .msg > textarea{
     background-color: black;
     color: blue;
+    font-size: 3rem;
+    font-weight: bolder;
     /* font-size: 2rem; */
+  }
+  #contact{
+    background-color: gray;
+    background-image: url('./msg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+   
   }
   .sub{
     position: relative;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
-    max-width: 3rem;
-    height: 2rem;
+    /* min-width: 3rem; */
+    min-height: 2rem;
     align-items: center;
-    left: 40%;
+    align-self: center;
+    /* left: 50%; */
     background-color: black;
     color: blue;
     border-radius: 50%;
@@ -380,5 +427,29 @@ footer {
     
     .projects {
         grid-template-columns: 1fr;
+
+    }
+    .msg > input{
+        height: 5vh;
+        font-size: 1rem;
+    }
+    .msg >textarea{
+        font-size: 1.5rem;
+    }
+    #contact ,#skills{
+        object-fit: cover;
+        background-size: 100% 100%;
+        background-repeat: repeat;
+        background-position: center center;
+    }
+    #projects{
+        background-size: cover;
+        background-position: center center;
+    }
+    .skill-tag{
+        font-size: 1rem;
+    }
+    .project-card{
+        padding:0
     }
 }
