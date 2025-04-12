@@ -3,8 +3,9 @@ const url = "https://related-bright-cowbird.ngrok-free.app"
 const email = document.getElementById('email');
 const msg = document.getElementById('msg');
 const info = document.getElementById('info');
-document.getElementById('send').addEventListener('click',async()=>{
- 
+
+document.getElementById('send').addEventListener('click',async(e)=>{
+    e.preventDefault();
     if (email.value.trim() != "" && msg.value.trim !=""){
 
         const data = await axios.post(`${url}/msg`,{email:email.value,msg:msg.value})
